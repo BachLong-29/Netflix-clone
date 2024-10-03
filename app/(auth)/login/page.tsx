@@ -1,12 +1,25 @@
 import { Button } from "@/components/ui/button";
-import GithubSignInButton from "@/app/component/GithubSignInButton";
-import GoogleSignInButton from "@/app/component/GoogleSignInButton";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import React from "react";
 import { authOptions } from "@/app/utils/auth";
+import dynamic from "next/dynamic";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+
+const GithubSignInButton = dynamic(
+  () => import("@/app/component/GithubSignInButton"),
+  {
+    ssr: false,
+  }
+);
+
+const GoogleSignInButton = dynamic(
+  () => import("@/app/component/GoogleSignInButton"),
+  {
+    ssr: false,
+  }
+);
 
 const Login = async () => {
   const session = await getServerSession(authOptions);
@@ -14,7 +27,7 @@ const Login = async () => {
     return redirect("/home");
   }
   return (
-    <div className="mt-24 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-sm md:px-14">
+    <span className="mt-24 rounded bg-black/80 py-10 px-6 md:mt-0 md:max-w-sm md:px-14">
       <form method="post" action="/api/auth/signin">
         <h1 className="text-3xl font-semibold text-white">Login</h1>
         <div className="space-y-4 mt-5">
@@ -43,7 +56,7 @@ const Login = async () => {
         <GithubSignInButton />
         <GoogleSignInButton />
       </div>
-    </div>
+    </span>
   );
 };
 

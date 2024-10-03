@@ -1,6 +1,17 @@
-import MovieVideo from "../component/MovieVideo";
+// import MovieVideo from "../component/MovieVideo";
+
 import React from "react";
-import RecentlyAdded from "../component/RecentlyAdded";
+import dynamic from "next/dynamic";
+
+// import RecentlyAdded from "../component/RecentlyAdded";
+
+const MovieVideo = dynamic(() => import("../component/MovieVideo"), {
+  ssr: false,
+});
+
+const RecentlyAdded = dynamic(() => import("../component/RecentlyAdded"), {
+  ssr: false,
+});
 
 const HomePage = () => {
   return (

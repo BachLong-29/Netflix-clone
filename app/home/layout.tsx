@@ -1,8 +1,14 @@
-import Navbar from "../component/Navbar";
+// import Navbar from "../component/Navbar";
+
 import { ReactNode } from "react";
 import { authOptions } from "../utils/auth";
+import dynamic from "next/dynamic";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
+
+const Navbar = dynamic(() => import("../component/Navbar"), {
+  ssr: false,
+});
 
 const HomeLayout = async ({ children }: { children: ReactNode }) => {
   const session = await getServerSession(authOptions);

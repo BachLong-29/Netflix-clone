@@ -5,7 +5,7 @@ import { ReactNode } from "react";
 
 const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
+    <span className="relative flex h-screen w-screen flex-col bg-black md:items-center md:justify-center md:bg-transparent">
       <Image
         src={BackgroundImage}
         alt="background image"
@@ -22,7 +22,7 @@ const AuthLayout = ({ children }: { children: ReactNode }) => {
         className="absolute left-4 top-4 object-contain md:left-10 md:top-6"
       />
       {children}
-    </div>
+    </span>
   );
 };
 
