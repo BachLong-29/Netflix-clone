@@ -19,7 +19,6 @@ interface iMovieButton {
 const MovieButton = ({
   overview,
   youtubeUrl,
-  id,
   age,
   title,
   releaseDate,

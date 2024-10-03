@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import MovieButton from "./MovieButton";
 import React from "react";
 import prisma from "../utils/db";
@@ -39,13 +38,13 @@ const MovieVideo = async () => {
         <p className="text-white text-lg mt-5 line-clamp-3">{data?.overview}</p>
         <div className="flex gap-x-3 mt-4">
           <MovieButton
-            overview={data?.overview}
-            youtubeUrl={data?.youtubeString}
-            id={data?.id}
-            age={data?.age}
-            title={data?.title}
-            releaseDate={data?.release}
-            duration={data?.duration}
+            overview={data?.overview as string}
+            youtubeUrl={data?.youtubeString as string}
+            id={data?.id as number}
+            age={data?.age as number}
+            title={data?.title as string}
+            releaseDate={data?.release as number}
+            duration={data?.duration as number}
             key={data?.id}
           />
         </div>

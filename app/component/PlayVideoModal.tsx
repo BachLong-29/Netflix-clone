@@ -13,7 +13,7 @@ interface iPlayVideoModal {
   overview: string;
   youtubeUrl: string;
   state: boolean;
-  changeState: any;
+  changeState: (state: boolean) => void;
   year: number;
   age: number;
   time: number;
