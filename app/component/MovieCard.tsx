@@ -10,7 +10,7 @@ import PlayVideoModal from "./PlayVideoModal";
 interface iMovieCard {
   title: string;
   overview: string;
-  movieId: LargeNumberLike;
+  movieId: number;
   watchList: boolean;
   watchListId: string;
   youtubeUrl: string;
