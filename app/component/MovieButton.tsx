@@ -25,6 +25,8 @@ const MovieButton = ({
   duration,
 }: iMovieButton) => {
   const [open, setOpen] = useState(false);
+  console.log("process.env.GITHUB_ID", process);
+
   return (
     <>
       <Button onClick={() => setOpen(true)} className="text-lg font-medium">

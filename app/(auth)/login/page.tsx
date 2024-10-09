@@ -22,6 +22,7 @@ const GoogleSignInButton = dynamic(
 );
 
 const Login = async () => {
+  console.log("process.env.GITHUB_ID", process.env);
   const session = await getServerSession(authOptions);
   if (session) {
     return redirect("/home");
